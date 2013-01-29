@@ -1,0 +1,21 @@
+<section id="add">
+	<form action="/" method="post">
+		<textarea id="code" name="code" placeholder="Your Code&hellip;"></textarea>
+		<input type="submit" class="btn" value="Take Note!"><form>
+	</form>
+</section>
+
+<% @notes.each do |note| %>
+	<div class="note" <%= 'class="complete"' if note.complete %>>
+	
+		<textarea id="code" name="code">
+			<%= note.content %></textarea>
+					 
+			<p><span><a href="/<%= note.id %>">[edit]</a></span></p>
+		
+		<p class="links">
+			<a href="/<%= note.id %>/complete">&#8623;</a>
+		</p>
+		<p class="meta">Created: <%= note.created_at %></p>
+	</div>
+<% end %>

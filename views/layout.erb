@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<title><%= @title + ' | Recall' %></title>
+	<script src="/lib/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <script src="/codemirror.js"></script>
+    
+    <script src="/code/xml.js"></script>
+    <script src="/code/javascript.js"></script>
+    <script src="/code/css.js"></script>
+    <script src="/code/htmlmixed.js"></script>
+    <script src="/code/run.js"></script>
+    
+    
+    <link rel="stylesheet" href="/codemirror.css">
+    <link rel="stylesheet" href="/theme/lesser-dark.css">
+</head>
+<body>
+	<header>
+		<hgroup>
+			<h1><a href="/">Codebracket</a></h1>
+			<h2>Code like fuck</h2>
+		</hgroup>
+	</header>
+
+	<div id="main">
+		<%= yield %>
+	</div>
+
+	<footer>
+		<p><small>Codebracket</small></p>
+	</footer>
+	
+	<script>
+	var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    theme:  "lesser-dark"
+    });
+    </script>
+</body>
+</html>
