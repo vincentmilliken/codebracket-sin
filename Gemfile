@@ -16,3 +16,10 @@ group :test do
   gem 'rspec', :require => 'spec'
   gem 'rack-test'
 end
+
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  gem 'sqlite3'
+end
