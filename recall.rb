@@ -2,7 +2,8 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/recall.db")
 
 class Note
 	include DataMapper::Resource
