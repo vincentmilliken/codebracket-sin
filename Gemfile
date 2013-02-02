@@ -12,7 +12,3 @@ gem 'dm-validations'
 gem 'dm-aggregates'
 gem 'dm-migrations'
 gem 'haml'
-
-group :development do
-	gem 'shotgun'
-end
