@@ -1,11 +1,7 @@
-require "rubygems"
-require "bundler"
-Bundler.require
-
-set :root, File.dirname(__FILE__)
-set :views, File.dirname(__FILE__) + "/views"
-set :public, "public"
+require 'bundler'
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 
 require './recall.rb'
+use Rack::Deflater
 
 run Sinatra::Application
