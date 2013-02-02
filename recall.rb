@@ -20,6 +20,7 @@ class Note
 end
 
 DataMapper.finalize
+DataMapper.auto_upgrade!
 
 get '/' do
 	@notes = Note.all :order => :id.desc
