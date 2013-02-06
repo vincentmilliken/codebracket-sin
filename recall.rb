@@ -1,14 +1,24 @@
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
+require 'dm-core'
+require 'pg'
 
 Dir['vendor/*'].each do |lib|
   $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
 end
 
+configure do
+ DataMapper.setup(:default, ENV['DATABASE_URL'] || File.join("sqlite3://",settings.root, "recall.db"))
+end
+
+# set :database, ENV['DATABASE_URL'] || 'sqlite3://localhost/recall.db'
+
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 # DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/recall.db")
-# DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/recall.db')
+# DataMapper.setup(:default, "postgres://localhost/recall.db")
 
 class Note
 	include DataMapper::Resource
