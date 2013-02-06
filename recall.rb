@@ -6,9 +6,9 @@ require 'dm-timestamps'
 require 'dm-validations'  
 require 'dm-migrations'
 
-Dir['vendor/*'].each do |lib|
-  $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
-end
+# Dir['vendor/*'].each do |lib|
+#   $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
+# end
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://#{Dir.pwd}/recall.db')
 
@@ -27,7 +27,6 @@ class Note
 	property :updated_at, DateTime
 end
 
-DataMapper.finalize
 DataMapper.auto_upgrade!
 
 get '/' do
