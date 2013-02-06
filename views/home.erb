@@ -1,15 +1,16 @@
 <section id="add">
 	<form action="/" method="post">
 		<textarea id="code" name="code" placeholder="Your Code&hellip;"></textarea>
-		<input type="submit" class="btn" value="Take Note!"><form>
+		<input type="submit" class="btn btn-large add-code" value="Add Code!"><form>
 	</form>
 </section>
 
+<div class="notes-container">
+<h1 class="lead">Your snippets</h1>
 <% @notes.each do |note| %>
 	<div class="note" <%= 'class="complete"' if note.complete %>>
 	
-		<textarea id="code" name="code">
-			<%= note.content %></textarea>
+		<textarea id="code" name="code"><%= note.content %></textarea>
 					 
 			<p><span><a href="/<%= note.id %>">[edit]</a></span></p>
 		
@@ -19,3 +20,4 @@
 		<p class="meta">Created: <%= note.created_at %></p>
 	</div>
 <% end %>
+</div>
