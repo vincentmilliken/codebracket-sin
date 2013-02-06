@@ -1,5 +1,2 @@
-require 'bundler'
-require './recall.rb'
-use Rack::Deflater
-
+require './recall'
 run Sinatra::Application
