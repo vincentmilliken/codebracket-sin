@@ -13,9 +13,7 @@ configure do
 end
 
 # set :database, ENV['DATABASE_URL'] || 'sqlite3://localhost/recall.db'
-
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
-
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 # DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 # DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/recall.db")
 # DataMapper.setup(:default, "postgres://localhost/recall.db")
