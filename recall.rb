@@ -1,16 +1,15 @@
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
-require 'dm-core'  
-require 'dm-timestamps'  
-require 'dm-validations'  
-require 'dm-migrations'
+require 'dm-core'
 
-# Dir['vendor/*'].each do |lib|
-#   $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
-# end
+Dir['vendor/*'].each do |lib|
+  $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
+end
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://#{Dir.pwd}/recall.db')
+DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+
+# DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://#{Dir.pwd}/recall.db')
 
 # set :database, ENV['DATABASE_URL'] || 'sqlite3://localhost/recall.db'
 # DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
