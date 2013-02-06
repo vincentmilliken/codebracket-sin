@@ -7,8 +7,8 @@ Dir['vendor/*'].each do |lib|
   $:.unshift(File.join(File.dirname(__FILE__), lib, 'lib'))
 end
 
-# Uncomment when deploying...  DataMapper::setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/recall.db")
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
+DataMapper::setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/recall.db")
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
 
 # DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://#{Dir.pwd}/recall.db')
 
