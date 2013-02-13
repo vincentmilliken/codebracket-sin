@@ -5,6 +5,8 @@
 	</form>
 </section>
 
+<a href="/login">Login</a>
+
 <div class="notes-container">
 <h1 class="lead">Your snippets</h1>
 <% @notes.each do |note| %>
@@ -15,7 +17,7 @@
 			<p><span><a href="/<%= note.id %>">[edit]</a></span></p>
 		
 		<p class="links">
-			<a href="/<%= note.id %>/complete">&#8623;</a>
+			<a href="/<%= note.id %>">[view]</a>
 		</p>
 		<p class="meta">Created: <%= note.created_at %></p>
 	</div>

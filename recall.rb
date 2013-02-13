@@ -29,11 +29,19 @@ end
 
 DataMapper.auto_upgrade!
 
+enable :sessions
+
 get '/' do
 	@notes = Note.all :order => :id.desc
 	@title = 'All Codes'
 	erb :home
 end
+
+get '/login' do
+  @title = 'Login'
+  erb :login
+end
+
 
 post '/' do
 	n = Note.new
